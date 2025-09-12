@@ -162,7 +162,8 @@ export default function Home() {
                         const t = prompt('Editar título', task.title);
                         if (t !== null) updateTask(task.id, { title: t });
                       }}
-                      className="text-xs px-2 py-1 rounded border border-zinc-300 dark:border-zinc-600"
+                      className="text-xs px-2 py-1 rounded border border-zinc-300 dark:border-zinc-600 disabled:cursor-not-allowed disabled:opacity-50" //deixei como exemplo caso nao apliquem globalmente
+                      disabled={task.status === 'done'}
                     >
                       Editar
                     </button>
@@ -214,7 +215,7 @@ export default function Home() {
               className="px-3 py-2 text-sm rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900"
               title="Alternar tema"
             >
-              {theme === 'light' ? '🌙' : '☀️'}
+              {theme === 'light' ? '☀️' : '🌙'}
             </button>
             <button
               onClick={() => {
@@ -231,7 +232,7 @@ export default function Home() {
 
       <main className="max-w-6xl mx-auto px-4 py-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Column status="backlog" title="Backlog" />
+          <Column status="backlog" title="TODO" />
           <Column status="doing" title="Doing" />
           <Column status="done" title="Done" />
         </div>
