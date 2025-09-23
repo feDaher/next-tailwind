@@ -1,5 +1,5 @@
-// src/components/SettingsModal.tsx
 "use client"
+
 import { User } from "@/lib/types"
 import { useSession } from "@/contexts/SessionContext"
 import { X, LogOut } from "lucide-react"
@@ -13,7 +13,6 @@ export default function SettingsModal({ user, onClose }: SettingsModalProps) {
   const { logout } = useSession()
 
   return (
-    // ALTERAÇÃO FEITA AQUI: Adicionado 'backdrop-blur-sm' e ajustada a opacidade
     <div className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm z-50 flex justify-center items-center p-4">
       <div className="bg-white dark:bg-zinc-900 rounded-lg p-6 w-full max-w-lg relative shadow-xl">
         <button
