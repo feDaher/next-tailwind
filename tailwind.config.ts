@@ -1,6 +1,10 @@
+// tailwind.config.ts
 import type { Config } from 'tailwindcss';
 
-export default {
+const config: Config = {
+  // ADICIONE ESTA LINHA
+  darkMode: "class",
+
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -19,4 +23,6 @@ export default {
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;
